@@ -13,6 +13,9 @@ const sagaFactory = function(name, url, optionsConstructor) {
     try {
       const result = yield call(fetch, url, optionsConstructor(action));
       const json = yield result.json();
+      if (json.status && json.status >= 400) {
+        throw new Error(json.error);
+      }
       yield put(actions.store(json));
     } catch (e) {
       yield put(actions.error(e));

@@ -1,7 +1,9 @@
 import { saga as start } from "./services/start";
+import { saga as sow } from "./services/sow";
 
 const sagas = {
-  startSaga: start.root
+  startSaga: start.root,
+  sowSaga: sow.root
 };
 
 export function registerWithMiddleware(middleware) {
