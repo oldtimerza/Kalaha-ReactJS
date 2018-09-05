@@ -27,11 +27,16 @@ class BoardContainer extends Component {
     }
     if (game) {
       return (
-        <Board
-          pits={game.pits}
-          kalahas={game.kalahas}
-          makeMove={this.makeMove(game.currentPlayerIndex)}
-        />
+        <div>
+          <Board
+            pits={game.pits}
+            kalahas={game.kalahas}
+            makeMove={this.makeMove(game.currentPlayerIndex)}
+          />
+          <p>{"Current players turn: Player " + game.currentPlayerIndex}</p>
+          <p>{"Next players turn: Player " + game.nextPlayerIndex}</p>
+          <p>{"Game state: " + game.status}</p>
+        </div>
       );
     }
     return <div />;

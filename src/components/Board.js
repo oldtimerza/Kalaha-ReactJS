@@ -14,14 +14,13 @@ export default props => {
           for (var kalaha of kalahas) {
             if (kalaha.pitNumber && kalaha.pitNumber == pit.pitNumber) {
               return (
-                <Kalaha key={kalaha.pitNumber}>
-                  <Pit
-                    key={pit.pitNumber}
-                    stones={pit.numberOfStones}
-                    number={pit.pitNumber}
-                    makeMove={makeMove}
-                  />
-                </Kalaha>
+                <Kalaha
+                  key={pit.pitNumber}
+                  stones={pit.numberOfStones}
+                  number={pit.pitNumber}
+                  makeMove={makeMove}
+                  owningPlayerIndex={pit.owningPlayerIndex}
+                />
               );
             }
           }
@@ -32,7 +31,7 @@ export default props => {
             stones={pit.numberOfStones}
             number={pit.pitNumber}
             makeMove={makeMove}
-            ownerIndex={pit.ownerIndex}
+            owningPlayerIndex={pit.owningPlayerIndex}
           />
         );
       })}
