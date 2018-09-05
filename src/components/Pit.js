@@ -2,12 +2,13 @@ import React, { Component } from "react";
 
 export default props => {
   return (
-    <p
+    <div
+      className="pit"
       onClick={() => {
         props.makeMove(props.number);
       }}
     >
       {props.stones}
-    </p>
+    </div>
   );
 };
