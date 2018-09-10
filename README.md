@@ -13,3 +13,5 @@ create an issue with a suggestion.
 Much appreciated
 
 kthxbai :)
+
+PS: The backend REST API project can be found here: https://github.com/oldtimerza/Kalaha-backend
